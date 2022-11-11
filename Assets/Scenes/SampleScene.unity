@@ -520,17 +520,11 @@ MonoBehaviour:
   _maxSpeed: 4
   _maxAcceleration: 35
   _maxAirAcceleration: 20
+  _canAirStrafe: 1
   _jumpHeight: 3
   _maxAirJumps: 1
   _downwardMovementMultiplier: 3
   _upwardMovementMultiplier: 1.7
-  _damage: 0.1
-  _defAttackDelay: 0
-  _attackPos: {fileID: 2132628623}
-  _attackRange: 1
-  _enemyMask:
-    serializedVersion: 2
-    m_Bits: 0
 --- !u!1 &1240706001
 GameObject:
   m_ObjectHideFlags: 0

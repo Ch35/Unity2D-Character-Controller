@@ -8,6 +8,7 @@ public abstract class CharacterController : MonoBehaviour
     [SerializeField, Range(0f, 100f)] private float _maxSpeed = 4f;
     [SerializeField, Range(0f, 100f)] private float _maxAcceleration = 35f;
     [SerializeField, Range(0f, 100f)] private float _maxAirAcceleration = 20f;
+    [SerializeField] private bool _canAirStrafe = true;
 
     [Header("Jumping")]
     [SerializeField, Range(0f, 10f)] protected float _jumpHeight = 3f;
@@ -58,6 +59,11 @@ public abstract class CharacterController : MonoBehaviour
 
     private void HandleMove()
     {
+        if (!_canAirStrafe && !_onGround)
+        {
+            return;
+        }
+
         _acceleration = _onGround ? _maxAcceleration : _maxAirAcceleration;
         _maxSpeedChange = _acceleration * Time.deltaTime;
         _velocity.x = Mathf.MoveTowards(_velocity.x, _desiredVelocity.x, _maxSpeedChange);
